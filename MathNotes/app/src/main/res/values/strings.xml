@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">MathNote</string>
+    <string name="main_tvTitle_text">Math Notes</string>
+    <string name="main_ivAdd_transitionName">addItem_transition</string>
+    <string name="tvInfo_text">CREATE NOTE</string>
+    <string name="ivAdd_contentDescription">Plus Icon</string>
+    <string name="btCancel_text">CANCEL</string>
+    <string name="btAdd_text">CREATE</string>
+    <string name="etDescription_hint">DESCRIPTION</string>
+    <string name="etTitle_hint">TITLE</string>
+    <string name="info_ivInfo_contentDescription">INFORMATION ICON</string>
+    <string name="info_tvTitle_text">TITLE</string>
+    <string name="info_tvDescription_text">DESCRIPTION</string>
+    <string name="info_btBack_text">BACK</string>
+    <string name="main_ivColor_contentDescription">SET BACKGROUND COLOR</string>
+    <string name="main_ivAdd_contentDescription">ADD ICON</string>
+    <string name="item_ivEdit_contentDescription">EDIT ITEM ICON</string>
+    <string name="item_tvNoteTitle_text">TITLE</string>
+    <string name="item_tvDescription_text">DESCRIPTION</string>
+    <string name="popupMenu_iDelete_title">DELETE</string>
+    <string name="popupMenu_iRed_title">CHANGE RED COLOR</string>
+    <string name="popupMenu_iYellow_title">CHANGE YELLOW COLOR</string>
+</resources>

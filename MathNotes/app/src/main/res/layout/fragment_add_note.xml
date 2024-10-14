@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#7DA3AF"
+    tools:context=".activities.CreateNoteFragment">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvContainer"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:backgroundTint="#C9D8E8"
+        app:cardCornerRadius="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/btCancel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tvInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="30dp"
+                android:text="@string/tvInfo_text"
+                android:textColor="#4C4C4C"
+                android:textSize="@dimen/tvInfo_textSize"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <EditText
+                android:id="@+id/etTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="@dimen/etTitle_layout_marginTop"
+                android:autofillHints="@string/etTitle_hint"
+                android:gravity="center"
+                android:hint="@string/etTitle_hint"
+                android:inputType="text"
+                android:textColor="#4C4C4C"
+                app:layout_constraintBottom_toTopOf="@id/etDescription"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvInfo"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <EditText
+                android:id="@+id/etDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:autofillHints="@string/etDescription_hint"
+                android:gravity="center"
+                android:hint="@string/etDescription_hint"
+                android:inputType="text"
+                android:textColor="#4C4C4C"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etTitle" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/btCancel"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="#C1CFE4"
+        android:text="@string/btCancel_text"
+        android:textColor="#4C4C4C"
+        app:layout_constraintBottom_toTopOf="@+id/btAdd"
+        app:layout_constraintEnd_toEndOf="@+id/btAdd"
+        app:layout_constraintStart_toStartOf="@+id/btAdd"
+        app:layout_constraintTop_toBottomOf="@id/cvContainer" />
+
+    <Button
+        android:id="@+id/btAdd"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#C1CFE4"
+        android:text="@string/btAdd_text"
+        android:textColor="#4C4C4C"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btCancel"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
