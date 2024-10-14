@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="main_tvTitle_textSize">25sp</dimen>
+    <dimen name="main_tvTitle_layout_margin">20dp</dimen>
+    <dimen name="main_rvList_layout_height">0dp</dimen>
+    <dimen name="main_ivAdd_layout_width">100dp</dimen>
+    <dimen name="main_ivAdd_layout_height">100dp</dimen>
+    <dimen name="main_ivAdd_layout_margin">25dp</dimen>
+    <dimen name="tvInfo_textSize">20sp</dimen>
+    <dimen name="button_gray_margin">10dp</dimen>
+    <dimen name="etTitle_layout_marginTop">20dp</dimen>
+    <dimen name="info_tvTitle_textSize">25sp</dimen>
+    <dimen name="info_tvDescription_layout_margin">20dp</dimen>
+    <dimen name="info_tvDescription_textSize">20sp</dimen>
+    <dimen name="info_tvDescription_layout_height">0dp</dimen>
+    <dimen name="main_ivColor_layout_width">40dp</dimen>
+    <dimen name="main_ivColor_layout_height">40dp</dimen>
+    <dimen name="main_ivColor_layout_margin">10dp</dimen>
+    <dimen name="item_cvRoot_layout_margin">5dp</dimen>
+    <dimen name="item_cvRoot_cardCornerRadius">5dp</dimen>
+    <dimen name="item_cvRoot_cardElevation">4dp</dimen>
+    <dimen name="item_ivEdit_layout_margin">10dp</dimen>
+    <dimen name="item_tvNoteTitle_layout_margin">6dp</dimen>
+    <dimen name="item_tvNoteTitle_padding">4dp</dimen>
+    <dimen name="item_tvNoteTitle_textSize">18sp</dimen>
+    <dimen name="item_tvDescription_layout_margin">7dp</dimen>
+    <dimen name="item_tvDescription_padding">4dp</dimen>
+</resources>

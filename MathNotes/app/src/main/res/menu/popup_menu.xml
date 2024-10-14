@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/iDelete"
+        android:title="@string/popupMenu_iDelete_title" />
+    <item
+        android:id="@+id/iRed"
+        android:title="@string/popupMenu_iRed_title" />
+    <item
+        android:id="@+id/iYellow"
+        android:title="@string/popupMenu_iYellow_title" />
+</menu>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#7DA3AF">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/main_tvTitle_layout_margin"
+        android:text="@string/main_tvTitle_text"
+        android:textColor="@color/white"
+        android:textSize="@dimen/main_tvTitle_textSize"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvList"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/main_rvList_layout_height"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+        tools:listitem="@layout/note_item" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/ivAdd"
+        android:layout_width="@dimen/main_ivAdd_layout_width"
+        android:layout_height="@dimen/main_ivAdd_layout_height"
+        android:layout_margin="@dimen/main_ivAdd_layout_margin"
+        android:backgroundTint="#C1CFE4"
+        android:contentDescription="@string/main_ivAdd_contentDescription"
+        android:gravity="center"
+        android:text="+"
+        android:textColor="#334247"
+        android:textSize="50sp"
+        android:transitionName="@string/main_ivAdd_transitionName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
