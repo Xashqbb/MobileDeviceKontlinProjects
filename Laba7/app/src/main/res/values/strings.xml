@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Laba7</string>
+    <string-array name="filter_options">
+        <item>All students</item>
+        <item>By specialty</item>
+        <item>By rating</item>
+    </string-array>
+</resources>
