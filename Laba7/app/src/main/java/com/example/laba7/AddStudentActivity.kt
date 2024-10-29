@@ -28,7 +28,7 @@ class AddStudentActivity : AppCompatActivity() {
 
         saveButton.setOnClickListener {
             val newStudent = Student(
-                id = 0, // id буде автоматично генеруватися в БД
+                id = 0,
                 firstName = firstNameEditText.text.toString(),
                 lastName = lastNameEditText.text.toString(),
                 email = emailEditText.text.toString(),

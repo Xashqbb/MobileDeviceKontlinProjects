@@ -20,11 +20,11 @@ class StudentAdapter(private var students: MutableList<Student>, private val onC
         holder.bind(student)
 
         holder.itemView.setOnClickListener {
-            onClick(student.id) // Передаємо ID студента
+            onClick(student.id)
         }
 
         holder.deleteButton.setOnClickListener {
-            onDelete(student.id) // Передаємо ID студента для видалення
+            onDelete(student.id)
         }
     }
 
