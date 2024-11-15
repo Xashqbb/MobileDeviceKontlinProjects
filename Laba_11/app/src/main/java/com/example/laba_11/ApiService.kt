@@ -1,7 +1,8 @@
 package com.example.laba_11
 
 
-import retrofit2.Call
+import com.example.laba_11.network.NetworkPost
+import retrofit2.Response
 import retrofit2.http.*
 
 data class Post(
@@ -12,9 +13,6 @@ data class Post(
 
 
 interface ApiService {
-
-    // CREATE
-    @POST("posts")
-    suspend fun createPost(@Body post: Post): Call<Post>
-
+    @GET("posts")
+    suspend fun getPosts(): Response<List<NetworkPost>>
 }
