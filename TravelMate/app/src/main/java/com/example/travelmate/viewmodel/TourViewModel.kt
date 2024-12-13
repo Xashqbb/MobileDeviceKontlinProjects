@@ -7,7 +7,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.travelmate.model.Tour
-import com.example.travelmate.view.MyApplication
 import com.example.travelmate.viewmodel.TourRepository
 import kotlinx.coroutines.launch
 
@@ -16,59 +15,70 @@ class TourViewModel(application: Application) : AndroidViewModel(application) {
     private val tourDao = (application as MyApplication).db.tourDao()
     private val tourRepository = TourRepository(tourDao)
 
-    private val _tours = MutableLiveData<List<Tour>>()  // Non-nullable list
+    private val _tours = MutableLiveData<List<Tour>>()
     val tours: LiveData<List<Tour>> get() = _tours
 
-    fun loadTours() {
+    init {
+        loadTours() // Initial loading of tours
+    }
+
+    // Load all tours
+    private fun loadTours() {
         viewModelScope.launch {
-            val toursFromDb = tourRepository.getAllTours().value
-            toursFromDb?.let {
-                _tours.postValue(it)
-            } ?: Log.d("ViewModel", "No tours found in database")
+            tourRepository.getAllTours().observeForever { tours ->
+                _tours.postValue(tours)
+            }
         }
     }
 
 
-    fun loadToursSortedByCategory() {
-        viewModelScope.launch {
-            val sortedTours = tourRepository.getAllTours().value?.sortedBy { it.country } ?: emptyList()
-            _tours.postValue(sortedTours)
-        }
+    // Get sorted tours by country
+    fun getToursSortedByCategory(): List<Tour>? {
+        return _tours.value?.sortedBy { it.country }
     }
 
-    fun loadToursSortedByTags() {
-        viewModelScope.launch {
-            val sortedTours = tourRepository.getAllTours().value?.sortedBy { it.tags } ?: emptyList()
-            _tours.postValue(sortedTours)
-        }
+    // Get sorted tours by tags
+    fun getToursSortedByTags(): List<Tour>? {
+        return _tours.value?.sortedBy { it.tags }
     }
 
-    // Method for adding test tours
+    // Add test tours
     fun addTestTours() {
         viewModelScope.launch {
             val testTours = listOf(
                 Tour(
-                    id = 0,
-                    title = "Paris Adventure",
-                    description = "A romantic getaway exploring the sights of Paris.",
-                    country = "France",
-                    imageResource = R.drawable.paris_image,
-                    tags = "romantic, sightseeing",
-                    latitude = 48.8566,
-                    longitude = 2.3522
+                    0,
+                    "Paris Adventure",
+                    "Explore Paris DESCRIPTION",
+                    "France",
+                    R.drawable.paris_image,
+                    "romantic, sightseeing",
+                    48.8566,
+                    2.3522
                 ),
                 Tour(
-                    id = 0,
-                    title = "Tokyo Highlights",
-                    description = "Experience the vibrant culture and tech wonders of Tokyo.",
-                    country = "Japan",
-                    imageResource = R.drawable.tokyo_image,
-                    tags = "city tour, culture",
-                    latitude = 35.6762,
-                    longitude = 139.6503
+                    0,
+                    "Tokyo Highlights",
+                    "Discover Tokyo DESCRIPTION",
+                    "Japan",
+                    R.drawable.tokyo_image,
+                    "city tour, culture",
+                    35.6762,
+                    139.6503
+                ),
+                Tour(
+                    0,
+                    "New York City",
+                    "Visit NYC DESCRIPTION",
+                    "USA",
+                    R.drawable.nyc_image,
+                    "city tour, sightseeing",
+                    40.7128,
+                    -74.0060
                 )
             )
             testTours.forEach { tourRepository.insertTour(it) }
         }
     }
 }
+

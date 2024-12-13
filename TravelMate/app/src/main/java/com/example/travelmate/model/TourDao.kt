@@ -13,5 +13,12 @@ interface TourDao {
 
     @Query("SELECT * FROM tours")
     fun getAllTours(): LiveData<List<Tour>>
+
+    @Query("SELECT * FROM tours WHERE 'name' = :name LIMIT 1")
+    fun getTourByName(name: String): Tour?
+
+    @Query("SELECT * FROM tours WHERE id = :tourId")
+    fun getTourById(tourId: Int): Tour?
+
 }
 

@@ -1,0 +1,58 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.travelmate.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_toursFragment"
+            app:destination="@id/toursFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.travelmate.RegisterFragment"
+        android:label="Register"
+        tools:layout="@layout/fragment_register">
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/toursFragment"
+        android:name="com.example.travelmate.ToursFragment"
+        android:label="Tours"
+        tools:layout="@layout/fragment_tours">
+        <action
+            android:id="@+id/action_toursFragment_to_tourDetailFragment"
+            app:destination="@id/tourDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/tourDetailFragment"
+        android:name="com.example.travelmate.TourDetailFragment"
+        android:label="Tour Detail"
+        tools:layout="@layout/fragment_tour_detail">
+        <argument
+            android:name="tour"
+            app:argType="com.example.travelmate.model.Tour" />
+        <action
+            android:id="@+id/action_tourDetailFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.travelmate.view.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" />
+</navigation>

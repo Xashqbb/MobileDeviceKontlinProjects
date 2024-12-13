@@ -1,12 +1,12 @@
-package com.example.travelmate.view
+package com.example.travelmate
 
 import android.app.Application
-import android.util.Log
 import androidx.room.Room
 import com.example.travelmate.model.AppDatabase
 
 class MyApplication : Application() {
     lateinit var db: AppDatabase
+        private set
 
     override fun onCreate() {
         super.onCreate()
@@ -17,6 +17,5 @@ class MyApplication : Application() {
         )
             .fallbackToDestructiveMigration()
             .build()
-        Log.d("Database", "Database initialized: ${db.isOpen}")
     }
 }
