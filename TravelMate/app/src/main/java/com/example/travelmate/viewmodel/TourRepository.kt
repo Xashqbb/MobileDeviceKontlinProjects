@@ -10,6 +10,11 @@ class TourRepository(private val tourDao: TourDao) {
         return tourDao.getAllTours()
     }
 
+    fun getTourByName(name: String): Tour? {
+        return tourDao.getTourByName(name)
+    }
+
+
     suspend fun insertTour(tour: Tour) {
         tourDao.insertTour(tour)
     }
